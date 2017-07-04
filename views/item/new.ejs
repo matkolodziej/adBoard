@@ -1,26 +1,172 @@
 <% include ../partials/header %>
 
 
-<div class="row col-md-4">
-    <h1> Add new item </h1>
+<div class="col-md-8">
     <form action="/item/<%= category._id %>" method="POST">
-        <label for="name">item Name</label>
-        <div class="form-group">
-            <input type="text" class="form-control" name="name" placeholder="name">
+        <div class="row">
+            <span>Ad Details</span>
+            <div class="container">
+                <ul>
+                    <li class="category">
+                        <label>Ad Type: </label>
+                        <div class="">
+                            <label>
+                                <input type="radio" 
+                                        value="OFFER" 
+                                        checked="checked" 
+                                        name="adType">
+                                        I am selling
+                                <span> You are selling item </span>
+                            </label>
+                            <label>
+                                <input type="radio" 
+                                        value="WANTED" 
+                                        name="adType">
+                                        I want
+                                <span> You are looking for item to buy </span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="price">
+                        <label>Price: </label>
+                        <div class="">
+                            <label>
+                                <span>$</span>
+                                <input type="radio" 
+                                        value="value" 
+                                        checked="checked" 
+                                        name="priceType">
+                                <input type="text" name="value">
+                            </label>
+                            <label>
+                                <input type="radio" 
+                                        value="free" 
+                                        name="priceType">
+                                        Free
+                            </label>
+                            <label>
+                                <input type="radio" 
+                                        value="trade" 
+                                        name="priceType">
+                                        Swap / Trade
+                            </label>
+                        </div>
+                    </li>
+                     <li class="price">
+                        <label>For Sale By: </label>
+                        <div class="">
+                            <label>
+                                <input type="radio" 
+                                        value="owner" 
+                                        checked="checked" 
+                                        name="forSaleBy">
+                                        Owner
+                            </label>
+                            <label>
+                                <input type="radio" 
+                                        value="business" 
+                                        name="forSaleBy">
+                                        Business
+                            </label>
+                        </div>
+                    </li>
+                    <li class="title">
+                        <label>Ad Title: </label>
+                        <div>
+                            <input type="text" class="form-control" name="title">
+                        </div>
+                    </li>
+                    <li class="description">
+                        <label>Description: </label>
+                        <div>
+                            <textarea name="description" id="ad-description" maxlength="6100" data-minilength="10" name="description" spellcheck="true">
+                            </textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <label for="description">Description</label>
-        <div class="form-group">
-            <input type="text" class="form-control" name="description" placeholder="description">
+            <hr>
+        <div class="row">
+            <span>Location</span>
+            <div class="container">
+                <ul>
+                    <li class="city">
+                        <label>City: </label>
+                        <div>
+                            <input type="text" class="form-control" name="city">
+                        </div>
+                    </li>
+                    <li class="postal">
+                        <label>Postal Code: </label>
+                        <div>
+                            <input type="text" class="form-control" name="postal">
+                        </div>
+                    </li>
+                    <li class="address">
+                        <label>Street Address: </label>
+                        <div>
+                            <input type="text" class="form-control" name="address">
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <label for="price">Price</label>
-        <div class="form-group">
-            <input type="number" class="form-control" name="price" placeholder="price" min="0.01" step="0.01">
+
+        <hr>
+
+        <div class="row">
+            <span>Media</span>
+            <div class="container">
+                <ul>
+                    <li class="image">
+                        <label>Image: </label>
+                        <div>
+                            <input type="text" class="form-control" name="image">
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <label for="image">Image URL</label>
-        <div class="form-group">
-            <input type="text" class="form-control" name="image" placeholder="image">
+
+        <hr>
+
+        <div class="row">
+            <span>Contact Information</span>
+            <div class="container">
+                <ul>
+                    <li class="phone">
+                        <label>Phone Number: </label>
+                        <div>
+                            <input type="text" class="form-control" name="phone">
+                        </div>
+                    </li>
+                    <li class="email">
+                        <label>Email: </label>
+                        <div>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block">Submit</button>
+
+        <hr>
+
+        <div class="row">
+            <span>Promote My Ad</span>
+            <div class="container">
+                <label><input type="checkbox" class="checkbox" name="highlighted" value="highlighted">
+                Highlighted</label>
+                <label><input type="checkbox" class="checkbox" name="urgent" value="urgent">
+                Urgent</label>
+                <label><input type="checkbox" class="checkbox" name="top" value="top">
+                Top</label>
+                <label><input type="checkbox" class="checkbox" name="homepage" value="homepage">
+                Homepage</label>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary">Submit</button>
     </form>
 </div>
 

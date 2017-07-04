@@ -1,11 +1,11 @@
 var mongoose = require("mongoose");
 
 var ItemSchema = new mongoose.Schema({
+    adtype: String,
     title: String,
     description: String,
-    price: {
-        
-    },
+    price: String,
+    ownertype: String,
     image: String,
     author: {
         id:{
@@ -13,10 +13,6 @@ var ItemSchema = new mongoose.Schema({
             ref: "User"
         },
         username: String,
-        type: {
-            business: Boolean,
-            owner: Boolean
-        }
     },
     category: {
         id:{
@@ -28,14 +24,23 @@ var ItemSchema = new mongoose.Schema({
     location: {
         city: String,
         postal: String,
-        street: String
+        address: String
     },
-    type: {
-        selling: Boolean,
-        buying: Boolean
+    
+    promotion: {
+        highlighted: {type: Boolean, default: false},
+        urgent: {type: Boolean, default: false},
+        top: {type: Boolean, default: false},
+        homepage: {type: Boolean, default: false}
     },
-    urgent: Boolean,
-    highlighted: Boolean
+    added: {
+        type: Date,
+        default: Date.now
+    },
+    contact: {
+        phone: String,
+        email: String
+    }
     
 });
 

@@ -40,22 +40,40 @@ router.get("/:category_id/new", middleware.isLoggedIn, function(req,res) {
 // /item
 router.post("/:category_id", middleware.isLoggedIn, function(req, res){
     var newItem = {
-    name: req.body.name,
-    description: req.body.description,
-    price: req.body.price,
-    image: req.body.image,
-    author: {
-        id: req.user._id,
-        username: req.user.username 
-    },
-    category: {
-        id: req.params.category_id,
-        name: req.body.categoryName// Not working to be implemented as long there is ID it's minor.
-    }
+        adtype: req.body.adType,
+        price: {
+            value: req.body.value,
+            free: req.body.free,
+            trade: req.body.trade
+        },
+        ownertype: {
+            owner: req.body.forSaleBy,
+            business: req.body.forSaleBy  
+        },
+        title: req.body.title,
+        description: req.body.description,
+        location: {
+            city: req.body.city,
+            postal: req.body.postal,
+            address: req.body.address
+        },
+        image : req.body.image,
+        contact : { 
+            phone: req.body.phone,
+            email: req.body.email
+        },
+        category: {
+            id: req.params.category_id
+         },
+        author: {
+            id: req.user._id,
+            username: req.user.username 
+        }
     };
+
     Item.create(newItem, function(err, newestItem) {
         if(!err) {
-            res.redirect("/shop");
+            res.redirect("/");
         }
         });
     });
