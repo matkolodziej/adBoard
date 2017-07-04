@@ -1,16 +1,22 @@
 var mongoose = require("mongoose");
 
 var ItemSchema = new mongoose.Schema({
-    name: String,
+    title: String,
     description: String,
-    price: String,
+    price: {
+        
+    },
     image: String,
     author: {
         id:{
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-        username: String
+        username: String,
+        type: {
+            business: Boolean,
+            owner: Boolean
+        }
     },
     category: {
         id:{
@@ -18,7 +24,19 @@ var ItemSchema = new mongoose.Schema({
             ref: "Category"
         },
         name: String
-    }
+    },
+    location: {
+        city: String,
+        postal: String,
+        street: String
+    },
+    type: {
+        selling: Boolean,
+        buying: Boolean
+    },
+    urgent: Boolean,
+    highlighted: Boolean
+    
 });
 
 module.exports = mongoose.model("Item", ItemSchema);
