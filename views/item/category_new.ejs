@@ -1,0 +1,133 @@
+<% include partials/header %>
+<div class="col-lg-12">
+    <div class="heading">
+        <h3>Placeholder for future.</h3>
+        <span>Featured ads go here, later...</span>
+    </div>
+    <hr>
+    <div class="row">
+    <div class="col-md-4">
+        <span><i class="fa fa-usd" aria-hidden="true"></i>buy and sell</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "buy and sell") {%>
+                    <li>
+                        <a href="item/<%= category._id %>/new">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <span><i class="fa fa-car" aria-hidden="true"></i>cars & vehicles</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "cars & vehicles") {%>
+                    <li>
+                        <a href="item/<%= category._id %>/new">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <span><i class="fa fa-home" aria-hidden="true"></i>real estate</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "real estate") {%>
+                    <li>
+                        <a href="item/<%= category._id %>/new">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+        <span><i class="fa fa-paw" aria-hidden="true"></i>pets</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "pets") {%>
+                    <li>
+                        <a href="/category/<%= category._id %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <span><i class="fa fa-legal" aria-hidden="true"></i>jobs</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "jobs") {%>
+                    <li>
+                        <a href="/category/<%= category._id %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <span><i class="fa fa-wrench" aria-hidden="true"></i>services</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "services") {%>
+                    <li>
+                        <a href="/category/<%= category._id %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+        <span><i class="fa fa-sun-o" aria-hidden="true"></i>vacation rentals</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "vacation rentals") {%>
+                    <li>
+                        <a href="/category/<%= category._id %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <span><i class="fa fa-group" aria-hidden="true"></i>community</span>
+        <ul>
+            <% categories.forEach(function(category){ %>
+                <% if(category.parent.name === "community") {%>
+                    <li>
+                        <a href="/category/<%= category._id %>">
+                            <%= category.name %>
+                        </a>
+                    </li>
+                <%}%>
+            <% });%>
+        </ul>
+    </div>
+    </div>
+
+</div>
+
+    <% include partials/footer %>

@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="container">
+        <div class="col-lg-12">
+            <div class="heading">
+                <h3>Placeholder for future.</h3>
+            </div>
+            <hr>
+            <div class="Categories">
+                <% categories.forEach(function(category) { %>
+                    <% if(category.parent.name) {%>
+                        <%= var parent = category.name %>
+                    <% } %>
+                    <% if(parent === category.name) {%>
+                        <%= category.name %>
+                    <% }%>
+                <% }); %>
+            </div>
+        </div>    
+</div>
+
+<% include ../partials/footer %>

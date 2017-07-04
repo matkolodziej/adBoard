@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+
+ <h1> User Profile </h1>
+<hr>
+
+<div class="container">
+    <h4> Ads you posted: <h4>
+    <ul style="list-style: none;">
+        <% userItems.forEach(function(item) {%>
+            <li><a href="/item/<%= item._id %>"><%= item.name %></a></li>
+        <% }); %>
+    </ul>
+</div>
+<% include ../partials/footer %>
