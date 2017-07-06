@@ -5,7 +5,6 @@ var ItemSchema = new mongoose.Schema({
     title: String,
     description: String,
     price: String,
-    ownertype: String,
     image: String,
     author: {
         id:{

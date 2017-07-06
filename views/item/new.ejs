@@ -10,10 +10,10 @@
                     <li class="category">
                         <label>Ad Type: </label>
                         <div class="">
+                        <input type="hidden" name="adtype" id="adtype" value="">
                             <label>
                                 <input type="radio" 
                                         value="OFFER" 
-                                        checked="checked" 
                                         name="adType">
                                         I am selling
                                 <span> You are selling item </span>
@@ -30,17 +30,17 @@
                     <li class="price">
                         <label>Price: </label>
                         <div class="">
+                            <input type="hidden" name="priceFinal" id="priceFinal" value="">
                             <label>
                                 <span>$</span>
                                 <input type="radio" 
-                                        value="value" 
-                                        checked="checked" 
+                                        value="priceAmount"          
                                         name="priceType">
-                                <input type="text" name="value">
+                                <input type="text" name="priceAmount" id="priceAmount">
                             </label>
                             <label>
                                 <input type="radio" 
-                                        value="free" 
+                                        value="free"
                                         name="priceType">
                                         Free
                             </label>
@@ -49,24 +49,6 @@
                                         value="trade" 
                                         name="priceType">
                                         Swap / Trade
-                            </label>
-                        </div>
-                    </li>
-                     <li class="price">
-                        <label>For Sale By: </label>
-                        <div class="">
-                            <label>
-                                <input type="radio" 
-                                        value="owner" 
-                                        checked="checked" 
-                                        name="forSaleBy">
-                                        Owner
-                            </label>
-                            <label>
-                                <input type="radio" 
-                                        value="business" 
-                                        name="forSaleBy">
-                                        Business
                             </label>
                         </div>
                     </li>
@@ -79,7 +61,7 @@
                     <li class="description">
                         <label>Description: </label>
                         <div>
-                            <textarea name="description" id="ad-description" maxlength="6100" data-minilength="10" name="description" spellcheck="true">
+                            <textarea name="description" id="ad-description" maxlength="6100" data-minlength="10" name="description" rows="8"  cols="80" spellcheck="true">
                             </textarea>
                         </div>
                     </li>
@@ -156,18 +138,21 @@
         <div class="row">
             <span>Promote My Ad</span>
             <div class="container">
+                <div class="row">
                 <label><input type="checkbox" class="checkbox" name="highlighted" value="highlighted">
-                Highlighted</label>
+                Highlighted</label></div>
+                <div class="row">
                 <label><input type="checkbox" class="checkbox" name="urgent" value="urgent">
-                Urgent</label>
+                Urgent</label></div>
+                <div class="row">
                 <label><input type="checkbox" class="checkbox" name="top" value="top">
-                Top</label>
+                Top</label></div>
+                <div class="row">
                 <label><input type="checkbox" class="checkbox" name="homepage" value="homepage">
-                Homepage</label>
+                Homepage</label></div>
             </div>
         </div>
         <button class="btn btn-lg btn-primary">Submit</button>
     </form>
 </div>
-
 <% include ../partials/footer %>

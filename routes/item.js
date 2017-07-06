@@ -39,17 +39,10 @@ router.get("/:category_id/new", middleware.isLoggedIn, function(req,res) {
 
 // /item
 router.post("/:category_id", middleware.isLoggedIn, function(req, res){
+
     var newItem = {
-        adtype: req.body.adType,
-        price: {
-            value: req.body.value,
-            free: req.body.free,
-            trade: req.body.trade
-        },
-        ownertype: {
-            owner: req.body.forSaleBy,
-            business: req.body.forSaleBy  
-        },
+        adtype: req.body.adtype,
+        price: req.body.priceFinal,
         title: req.body.title,
         description: req.body.description,
         location: {
@@ -68,6 +61,12 @@ router.post("/:category_id", middleware.isLoggedIn, function(req, res){
         author: {
             id: req.user._id,
             username: req.user.username 
+        },
+        promotion: {
+            homepage: req.body.homepage,
+            top: req.body.top,
+            urgent: req.body.urgent,
+            highlighted: req.body.highlighted
         }
     };
 

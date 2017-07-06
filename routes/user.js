@@ -40,9 +40,8 @@ router.get("/logout", function(req, res) {
 });
 
 router.get("/profile", middleware.isLoggedIn ,function(req, res) {
-    var currentUserId = req.user._id;
     Item.find({
-        'author.id': currentUserId
+        'author.id': req.user._id
     }, function(err, userItems) {
             res.render("user/profile",{ userItems : userItems});
     });
