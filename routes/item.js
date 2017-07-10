@@ -40,60 +40,44 @@ router.get("/:category_id/new", middleware.isLoggedIn, function(req,res) {
 });
 
 // /item
-router.post("/:category_id", middleware.isLoggedIn, function(req, res){
-
+router.post("/:category_id", middleware.isLoggedIn, middleware.checkAdPostForm , function(req, res){
     
-    req.checkBody("title", "Please provide Title.").notEmpty();
-    req.checkBody("description", "Please provide Description.").notEmpty();
-    req.checkBody("city","Please provide City.").notEmpty();
-    req.checkBody("postal","Please provide Postal Code.").notEmpty();
-    req.checkBody("address","Please provide Street Address.").notEmpty();
-    req.checkBody("email", "Enter valid email address.").isEmail();
-
-
-    var errors = req.validationErrors();
-
-    if(errors) {
-        req.flash("error", errors);
-        res.redirect("back");
-    } else {
-        var newItem = {
-            adtype: req.body.adtype,
-            price: req.body.priceFinal,
-            title: req.body.title,
-            description: req.body.description,
-            location: {
-                city: req.body.city,
-                postal: req.body.postal,
-                address: req.body.address
-            },
-            image : req.body.image,
-            contact : { 
-                phone: req.body.phone,
-                email: req.body.email
-            },
-            category: {
-                id: req.params.category_id
-            },
-            author: {
-                id: req.user._id,
-                username: req.user.username 
-            },
-            promotion: {
-                homepage: req.body.homepage,
-                top: req.body.top,
-                urgent: req.body.urgent,
-                highlighted: req.body.highlighted
-            }
-        };
-
-        Item.create(newItem, function(err, newestItem) {
-            if(!err) {
-                req.flash("success", "Your ad was created succesfully.")
-                res.redirect("/");
-            }
-        });
+    var newItem = {
+        adtype: req.body.adtype,
+        price: req.body.priceFinal,
+        title: req.body.title,
+        description: req.body.description,
+        location: {
+            city: req.body.city,
+            postal: req.body.postal,
+            address: req.body.address
+        },
+        image : req.body.image,
+        contact : { 
+            phone: req.body.phone,
+            email: req.body.email
+        },
+        category: {
+            id: req.params.category_id
+        },
+        author: {
+            id: req.user._id,
+            username: req.user.username 
+        },
+        promotion: {
+            homepage: req.body.homepage,
+            top: req.body.top,
+            urgent: req.body.urgent,
+            highlighted: req.body.highlighted
+        }
     };
+
+    Item.create(newItem, function(err, newestItem) {
+        if(!err) {
+            req.flash("success", "Your ad was created succesfully.")
+            res.redirect("/");
+        }
+    });
 });
 
     

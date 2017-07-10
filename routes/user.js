@@ -7,16 +7,17 @@ var passport = require("passport");
 // Models
 var User = require("../models/user");
 var Item = require("../models/item");
+
 // /user/register
 router.get("/register", function(req, res) {
     res.render("user/register");
 });
-router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username});
+router.post("/register", middleware.checkRegisterForm ,function(req, res){
+    var newUser = new User({username: req.body.username, email: req.body.email});
 
     User.register(newUser, req.body.password, function(err, user) {
         if(err) {
-            res.redirect("register");
+            res.redirect("back");
         }
         passport.authenticate("local")(req, res, function() {
             res.redirect("/");
@@ -36,6 +37,7 @@ router.post("/login", passport.authenticate("local", {
 
 router.get("/logout", function(req, res) {
     req.logout();
+    req.flash("error","You looged out successfully.");
     res.redirect("/");
 });
 

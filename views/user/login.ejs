@@ -1,17 +1,24 @@
 <% include ../partials/header %>
 
-<div class="container">
-        <div class="card card-container">
-            <form class="form-signin" action="/user/login" method="POST">
-                <input type="text" name="username"class="form-control" placeholder="Login" required autofocus>
-                <input type="password" name="password" class="form-control" placeholder="Password" required>
-                <button class="btn btn-lg btn-primary btn-block btn-success" type="submit">Sign in</button>
-            </form><!-- /form -->
-            <a href="/user/register" class="forgot-password">
-                Register
-            </a>
-        </div>
-    </div>
 
+<div class="col-lg-8">
+    <div class="login-form">
+    <h2>Sign In</h2>
+        <form class="form-signin" action="/user/login" method="POST">
+            <label>Email or Username:</label>
+            <input type="text" name="username" class="form-control" placeholder="Login">
+            <label>Password:</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <button class="btn btn-block btn-success" type="submit">Sign in</button>
+        </form><!-- /form -->
+    </div>
+</div>
+<div class="col-lg-4">
+    <div class="login-register">
+        <h2>Not registered yet?</h2>
+        <p>Register now to post, edit, and managed ads. It's quick, easy, and free</p>
+        <a href="/user/register" class="btn btn-info">Register Now</a>
+    </div>
+</div>
 
 <% include ../partials/footer %>

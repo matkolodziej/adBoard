@@ -51,13 +51,14 @@
         </ul>
     </div>  
 </div>
-<header class="errors">
-    <% if (message.length > 0) { %>
-    <% message.forEach(function( m ) { %>
-    <div class="alert alert-danger">
-                <%= m.msg%>
-        </div>
-    <% }) %>
-    <% } %>
-</header>
 <div class="container">
+<% if (success.length > 0) { %>
+    <% success.forEach(function( s ) { %>
+        <div class="alert alert-success"><%= s.msg %></div>
+    <% }) %>
+<% } %>
+<% if (error.length > 0) { %>
+    <% error.forEach(function( e ) { %>
+        <div class="alert alert-danger"><%= e.msg%></div>
+    <% }) %>
+<% } %>
