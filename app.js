@@ -5,7 +5,9 @@ var express             = require("express"),
 var bodyParser          = require("body-parser"),
     passport            = require("passport"),
     LocalStrategy       = require("passport-local"),
-    mongoose            = require("mongoose");
+    mongoose            = require("mongoose"),
+    validator           = require("express-validator"),
+    flash               = require("connect-flash");
 
 //MODELS
 var User                = require("./models/user");
@@ -21,6 +23,8 @@ mongoose.connect("mongodb://localhost/argxCommerce");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(validator());
+app.use(flash());
 
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
@@ -28,7 +32,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/css', express.static(__dirname + '/node_modules/font-awesome/css')); // redirect CSS bootstrap
 
 app.use(require("express-session")({
-    secret: "Ecommerce",
+    secret: "adBoard",
     resave: false,
     saveUninitialized: false
 }));
@@ -42,6 +46,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
+    res.locals.message = req.flash("error");
     next();
 });
 

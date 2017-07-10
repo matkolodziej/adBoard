@@ -1,3 +1,43 @@
-li {
+ul {
+    display: block;
+}
+.category, .price, 
+.title, .description,
+.city, .postal, 
+.address, .image,
+ .phone, .email {
     list-style: none;
+    display: flex;
+}
+.example {
+    color: #999;
+}
+.row {
+    background-color: #F2F2F2;
+    border-color: #e4e4e4;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+}
+label {
+    clear: both;
+    padding-right: 5px;
+    float: left;
+}
+.checkbox {
+    float: left;
+    clear: both;
+    display: flex;
+}
+.promotion {
+    display: flex;
+}
+.form-control {
+    width: 30em;
+    height: 22px;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    float: left;
 }

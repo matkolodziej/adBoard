@@ -1,20 +1,42 @@
 <% include ../partials/header %>
 
-<div class="container">
-    <div class="card">
-        <div class="container-fluid">
-            <div class="wrapper row">
-                <div class="preview col-md-6">
-                    <div class="preview-pic tab-content">
-                        <div class="tab-pane active"><img src="<%= item.image %>" alt="Image"></div>
-                    </div>
-                </div>
-                <div class="details col-md-6">
-                    <h3 class="item-title"><%= item.name %></h3>
-                        <p class="item-description"><%= item.description %></p>
-                        <h4 class="price">Current price: <span>$<%= item.price %></span></h4>
-                        <p>Added by: <%= item.author.username %></p>
-                </div>
+<div class="breadcrumb"></div>
+
+<div class="container adview">
+    <div class="title"><%= item.title %></div>
+    <div class="adAction">
+        Report, Save to Favorites goes here later
+    </div>
+    <div class="socialMedia"></div>
+    <div class="row">
+        <img src="<%= item.image %>" width="672px">
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="ad-info">
+                <ul>
+                    <li>Date Listed <%= item.added.toISOString().slice(0, 10) %> </li>
+                    <li>Price: <span class="ad-price">$<strong><%= item.price %></strong></span> 
+                    <li>Address: <span><%= item.location.city %>, <%= item.location.postal %></span></li>
+                </ul>
+            </div>
+            <div class="description">
+                <%= item.description %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="contact-form">
+                <header>Contact Poster</header>
+                <ul class="poster-details">
+                    <li class="since">On AdBoard since 2011</li>
+                    <li class="phone"><%= item.contact.phone %></li>
+                    <hr>
+                    <li><input type="text" name="viewad-contact-email" title="Your Email" value-maxlength="128" placeholder="Your Email"></li>
+                    <li><input type="text" name="viewad-contact-name" placeholder="Your Name"></li>
+                    <li><input type="text" name="viewad-contact-phone" placeholder="Your Phone Number"></li>
+                    <li><textarea name="viewad-contact-message" placeholder="Message" cols="30" rows="10"></textarea></li>
+                    <li><button class="btn btn-success">Send Email</button></li>
+                </ul>
             </div>
         </div>
     </div>

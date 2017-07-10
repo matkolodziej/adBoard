@@ -10,18 +10,23 @@
     </div>
     <div class="col-md-9" style="margin-top: 30px">
         <% allItems.forEach(function(item) { %>
-            <div class="paragraphs">
+        <a href="/item/<%= item._id %>">
+            <div class="paragraph">
                 <div class="row">
-                    <div class="span4">
-                        <img src="<%= item.image %>" style="float: left;" width="250px" height="150px">
-                        <div class="content-heading"><h3><%= item.name %></h3></div>
-                        <p>$<%= item.price %></p>
-                        <p> <%= item.description.substring(0,200) %>...</p>
-                        
+                    <div class="left-col">
+                        <img src="<%= item.image %>">
                     </div>
-                    <a href="/item/<%= item._id %>" class="pull-right">Read more....</a>
+                    <div class="info">
+                        <div class="info-container">
+                            <div class="price">$<%= item.price %></div>
+                            <div class="title"><%= item.title %></div>
+                            <div class="location"><%= item.location.city %></div>
+                            <div class="description"><%= item.description.substring(0,200) %></div>
+                        </div>
+                    </div>   
                 </div>
             </div>
+            </a>
         <% }); %>
     </div>
 </div>

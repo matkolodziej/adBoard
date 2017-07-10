@@ -1,13 +1,9 @@
 body {
     font-family: Lato;
-    color: #404648;
+    background: #f2f2f2;
     font-size: 14px;
     background-color: #f9f9f9;
-}
-.navbar-fixed-top { position: absolute!important; }
-
-#body-container {  
-  margin-top: 17%;
+    padding-top: 110px;
 }
 .col-md-4 li {
   color: orange;
@@ -24,69 +20,171 @@ body {
 #login li a {
   color: #fff;
 }
-#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-    width: 45%;
-    margin: auto;
-}
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-
-}
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .fa-search{
-    font-size: 23px;
-}
-#search-bg {
-  background-color: #f1f2f2;
-  padding: 25px 0;
-  width: 100%;
-  margin-top: 30px;
-  border: solid 1px #E4E4E4;
-}
-.navbar {
-  height: 15%;
-  background-color: #22264b;
-  color: #fff;
-}
-.navbar .container {
-  margin-top: 50px;
-}
-
-.navbar-header .navbar-brand {
-  color: #fff;
-}
-.nav .navbar-nav a{
-  color: #fff;
-}
-.nav .navbar-nav a:hover{
-  color: #fff;
-}
-
-
 .cat-name {
   color: #22264b;
 }
+#ad-description {
+  width: 350px;
+  min-width: 350px;;
+  height: 200px;
+  max-height: 200px;
+  resize: none;
+}
+.content {
+  display: block;
+  padding: 100px 0;
+}
+/***** NAVBAR STARTS ****/
+.navbar {
+  background-color: #22264b;
+  position: absolute;
+  top: 0;
+  height: 110px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-left: 0;
+  margin: 0;
+  padding: 30px 0;
+  border-radius: 0;
+}
+.navbar .container {
+  position: relative;
+}
+.navbar .navbar-brand {
+  padding: 0;
+  float: left;
+  margin: 15px 20px;;
+  max-width: none;
+}
+.navbar .nav {
+  margin-left: 10px;
+  margin-top: 5px;
+  position: absolute;
+  right: 0;
+}
+.navbar ul {
+  display: block;
+}
+.navbar>li {
+  float: left;
+  display: list-item;
+  list-style: none;
+}
+.navbar a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: none;
+}
+.navbar a:hover {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .nav>li a {
+  margin: 0 15px;
+  display: inline-block;
+  background: none;
+}
+.navbar .nav>li a:hover {
+  text-decoration: underline;
+}
+.navbar .nav>li.sep {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  width: 1px;
+  margin: 14px 20px;
+  height: 16px;
+}
+.navbar .post-ad-link {
+  font-weight: bold;
+  background: #a5ea56;
+  text-align: center;
+  vertical-align: middle;
+} 
+/***** NAVBAR ENDS ****/
+/***** ITEM LIST IN SPECIFIC CATEGORY ****/
+.paragraph {
+  padding: 0;
+  display: block;
+}
+.paragraph:hover{
+  text-decoration: none;
+}
+.left-col {
+  float: left;
+  width: 200px;
+  height: 160px;
+  margin: 20px 25px;
+  padding: 0;
+  position: relative;
+}
+.left-col img {
+  max-height: 160px;
+  max-width: 200px;
+}
+.paragraph .row {
+  border: 1px solid #e6ebed;
+  background: #fff;
+  border-radius: 0;
+}
+.paragraph div {
+  display: block;
+}
 
+.info {
+  padding: 18px 15px 0 250px;
+}
+.info-container {
+  width: 100%;
+}
+.paragraph .price {
+  color: #99c663;
+  display: inline-block;
+  font-size: 25px;
+  float: right;
+  width: auto;
+}
+.paragraph .title {
+  color: #403e7c;
+  font-size: 16px;
+  line-height: 22px;
+  max-height: 44px;
+  overflow: hidden;
+  margin: 0 0 10px;
+  text-decoration: none;
+}
+.paragraph .location {
+  color: #617072;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 10px;
+}
+.paragraph .description {
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #404648;
+}
+/**** ITEM LIST ENDS ****/
+/**** ITEM DETAIL ****/
+
+.adview .title {
+  color: #404648;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.description {
+  background: #fff;
+}
+
+/**** ITEM DETAIL ENDS ****/
 footer {
   background-color: #474950;
   color: #f9f9f9;
