@@ -8,29 +8,28 @@
         Report, Save to Favorites goes here later
     </div>
     <div class="socialMedia"></div>
-    <div class="row">
-        <img src="<%= item.image %>" width="672px">
-    </div>
-    <div class="row">
-        <div class="col-md-8">
+    <div>
+        <div class="col-md-3 ad-images">
+            <img src="<%= item.image %>">
+        </div>
+        <div class="col-md-6 ad-description">
             <div class="ad-info">
                 <ul>
                     <li>Date Listed <%= item.added.toISOString().slice(0, 10) %> </li>
                     <li>Price: <span class="ad-price">$<strong><%= item.price %></strong></span> 
-                    <li>Address: <span><%= item.location.city %>, <%= item.location.postal %></span></li>
+                    <li>Address: <span><%= item.location.city %>, <%= item.location.postal.toUpperCase() %></span></li>
                 </ul>
             </div>
             <div class="description">
                 <%= item.description %>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3 ad-contact-form">
             <div class="contact-form">
                 <header>Contact Poster</header>
                 <ul class="poster-details">
                     <li class="since">On AdBoard since 2011</li>
                     <li class="phone"><%= item.contact.phone %></li>
-                    <hr>
                     <li><input type="text" name="viewad-contact-email" title="Your Email" value-maxlength="128" placeholder="Your Email"></li>
                     <li><input type="text" name="viewad-contact-name" placeholder="Your Name"></li>
                     <li><input type="text" name="viewad-contact-phone" placeholder="Your Phone Number"></li>

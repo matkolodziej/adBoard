@@ -1,6 +1,6 @@
 body {
     font-family: Lato;
-    background: #f2f2f2;
+    background: #f9f9f9;
     font-size: 14px;
     background-color: #f9f9f9;
     padding-top: 110px;
@@ -179,9 +179,73 @@ body {
   font-size: 22px;
   margin-bottom: 5px;
 }
+.ad-images, .ad-description, .ad-contact-form {
+  position: relative;
+  margin: 0 auto;
+  line-height: 1.4em;
+}
+.ad-images {
+  background: #fff;
 
+  line-height: 1.6em;
+
+  border: 1px solid #e6ebed;
+  border-radius: 3px 3px 0 0;
+}
+.ad-images>img {
+  max-width: 292px;
+  max-height: 292px;
+  width: 292px;
+  border: 0;
+  vertical-align: middle;
+  margin-left: -20px;
+}
 .description {
   background: #fff;
+  padding: 10px 17px;
+  border: 1px solid #e6ebed;
+  border-radius: 3px 3px 0 0;
+  width: auto;
+  min-height: 260px;
+  max-width: 495px;
+}
+.ad-info {
+  padding: 5px;
+}
+.ad-info>ul {
+  margin-left: -15px;
+}
+.ad-info>ul>li {
+  list-style: none;
+  margin-left: -15px;
+}
+.contact-form {
+  background: #fff;
+  height: 430px;
+  float: right;
+  line-height: 1.6em;
+  color: #f46e40;
+  padding: 10px 17px;
+  
+  border: 1px solid #e6ebed;
+  border-radius: 3px 3px 0 0;
+}
+.contact-form>header {
+  text-align: center;
+}
+.poster-details>li {
+  list-style: none;
+  display: list-item; 
+  float: left;
+  padding: 5px;
+}
+.poster-details>li>input {
+  width: 230px;
+}
+.poster-details>li>textarea {
+  resize: none;
+  width: 230px;
+  height: 160px;
 }
 
 /**** ITEM DETAIL ENDS ****/
@@ -191,7 +255,6 @@ footer {
   padding: 25px 0;
   text-align: center;
 }
-
 footer a {
   color: #f9f9f9;
 }
